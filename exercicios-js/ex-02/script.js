@@ -24,7 +24,7 @@ listaClientes.push({
     cpf : 12345678900
 })
 
-document.writeln("-----------------------------------------------------------------------------------")
+document.writeln("-----------------------------------------------------------------------------------");
 
 listaClientes.forEach((cliente) => {
     document.writeln(`<br>Nome: ${cliente.nome} | ${cliente.endereco} | ${cliente.endereco} <br><br>`);
@@ -37,11 +37,11 @@ listaClientes.unshift({
     cpf : 12345678900
 })
 
-document.writeln("-----------------------------------------------------------------------------------")
+document.writeln("-----------------------------------------------------------------------------------");
 
 listaClientes.forEach((cliente) => {
     document.writeln(`<br>Nome: ${cliente.nome} | ${cliente.endereco} | ${cliente.endereco} <br><br>`);
-})
+})/
 
-document.writeln("-----------------------------------------------------------------------------------")
-document.writeln(`<br> Numero de clientes : ${listaClientes.length}`)
+document.writeln("-----------------------------------------------------------------------------------");
+document.writeln(`<br> Numero de clientes : ${listaClientes.length}`);
