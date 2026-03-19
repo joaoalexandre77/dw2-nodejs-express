@@ -51,16 +51,17 @@ app.get("/produtos/:produto", (req, res) => {
 
 //Criando a rota de perfil do usuario
 app.get("/servicos", (req, res) => {
-    res.render("servicos");
+    // ARRAY DE OBJETOS
+    const servicos = [
+        {servico : "Desenvolvimento de webSites", descricao : "Criação de sites com Node.js e integração a banco de dados", preco : 2000 },
+        {servico : "Auditoria de UX/UI", descricao : "Avaliação da usabilidade de sistemas com sugestões de melhoria", preco : 1000 },
+        {servico : "Infraestrutura em Nuvem", descricao : "Configuração de servidores e hospedagem", preco : 3000 },
+        {servico : "ChatBot com Ia", descricao : "Desenvolvimento de chatbot para atendimento automatico", preco : 500 }
+    ]
+    res.render("servicos", {
+        servicos : servicos
+    });
 })
-
-// ARRAY DE OBJETOS
-const servicos = [
-    {servico : "Desenvolvimento de webSites", descricao : "Criação de sites com Node.js e integração a banco de dados", preco : 2000 },
-    {servico : "Auditoria de UX/UI", descricao : "Avaliação da usabilidade de sistemas com sugestões de melhoria", preco : 1000 },
-    {servico : "Infraestrutura em Nuvem", descricao : "Configuração de servidores e hospedagem", preco : 3000 },
-    {servico : "ChatBot com Ia", descricao : "Desenvolvimento de chatbot para atendimento automatico", preco : 500 }
-]
 
 // Iniciando o servidor na porta 8080
 const port = 8080;

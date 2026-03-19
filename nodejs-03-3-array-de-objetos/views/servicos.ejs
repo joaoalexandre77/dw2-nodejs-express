@@ -8,6 +8,23 @@
 <body>
     <h1>Bem-vindo a tela Servicos</h1>
     <hr>
+
+    <!-- Exibindo o array de objetos com o forEach -->
+    <table>
+        <tr>
+            <th>Servico</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+        </tr>
+        <% servicos.forEach(servico => {%>
+        <tr>
+            <td><%= servico.servico %></td>
+            <td><%= servico.descricao %></td>
+            <td><%= servico.preco %></td>
+        </tr>
+        <% }) %>
+    </table>
+
     <a href="/">Voltar para a página inicial</a>
 </body>
 </html>
