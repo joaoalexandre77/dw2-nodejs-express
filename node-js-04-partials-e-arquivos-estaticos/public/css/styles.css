@@ -1,0 +1,33 @@
+body {
+    margin: 0px;
+    line-height: 30px;
+    display: flex; 
+    flex-direction: column; 
+    height: 100vh;
+}
+
+header {
+    background-color: #161616;
+}
+
+header h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #161616;
+}
+
+footer p {
+    color: #ffffff;
+    text-align: center;
+}
+
+main img {
+    width: 600px;
+}
