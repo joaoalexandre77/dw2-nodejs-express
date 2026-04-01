@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<body>
+    <h1>Bem-vindo a tela clientes</h1>
+    <% listaUsers.forEach(cliente => { %>
+        <a href="./clientes/<%= cliente %>"><%= cliente %></a>
+    <% }) %>
+    <a href="/">Voltar para a página inicial</a>
+</body>
+</html>
