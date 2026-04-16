@@ -6,6 +6,9 @@ import express from "express";
 import ClienteController from "./controller/ClienteController.js";
 import PedidoController from "./controller/PedidoController.js";
 import ProdutoController from "./controller/ProdutoController.js";
+import Cliente from "./models/Cliente.js";
+import Pedido from "./models/Pedido.js";
+import associations from "./config/associations.js";
 
 // Importando o arquivo de conexão com o banco
 import connection from "./config/sequelize-config.js";
@@ -19,13 +22,20 @@ connection.authenticate()
 .catch((e) => {console.log(e)});
 
 // Criando o banco de dados (Somente se ainda não existir)
-connection.query("CREATE DATABASE IF NOT EXISTS sistemaloja").then(() => {
+connection.query("CREATE DATABASE IF NOT EXISTS loja_relacional").then(() => {
     console.log("O banco de dados está criado");
 })
 .catch((e) => {
     console.log(`Ocorreu um erro ao criar o banco de dados. erro: ${e}`);
 })
 
+
+// Invokando a função que cria as associacoes
+associations();
+
+//Sincronizando as tabelas
+Cliente.sync({force: false});
+Pedido.sync({force: false});
 
 // Iniciando o Express 
 const app = express() 

@@ -55,6 +55,9 @@
                                         <%= cliente.endereco %>
                                     </td>
                                     <td>
+                                        <a href="/clientes/editar/<%= cliente.id%>"><button class="btn btn-warning">Editar</button></a>
+                                    </td>
+                                    <td>
                                         <a href="/clientes/excluir/<%= cliente.id%>"><button onclick="return confirm('Deseja mesmo excluir o cliente?')" class="btn btn-danger">Excluir</button></a>
                                     </td>
                                 </tr>

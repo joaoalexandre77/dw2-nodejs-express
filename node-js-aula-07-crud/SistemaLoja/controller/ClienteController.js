@@ -51,5 +51,34 @@ router.get("/clientes/excluir/:id", (req, res) => {
     })
 })
 
+router.get("/clientes/editar/:id", (req, res) => {
+    const id = req.params.id;
+    Cliente.findByPk(id).then(response => {
+        res.render('clienteEditar', {
+            cliente: response
+        })
+    })
+})
+
+router.post("/clientes/alterar/:id", (req, res) => {
+    const nome = req.body.nome;
+    const cpf = req.body.cpf;
+    const endereco = req.body.endereco;
+    const id = req.body.id;
+
+    Cliente.update(
+        {
+            nome : nome,
+            cpf : cpf,
+            endereco : endereco
+        },
+        {
+            where: {id: id}
+        }
+    ).then(() => {
+        res.redirect("/clientes")
+    });
+});
+
 // Exportandp o módulo para usá-lo em outro arquivo
 export default router;
